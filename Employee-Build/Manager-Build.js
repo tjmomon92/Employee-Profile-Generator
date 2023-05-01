@@ -5,7 +5,7 @@ class Manager {
         
         //throws error if user inputted invalid data
         if ((!name) || (!id) || (!email) || (!officeNumber)) {
-            throw new Error('Must have all information for Engineer')
+            throw new Error('Must have all information for Manager')
         }
 
         this.name = name;
