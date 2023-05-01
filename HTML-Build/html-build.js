@@ -25,8 +25,49 @@ function buildHTML (cards) {
         </section>
     </body>
     </html>
-    `}
+`}
+
+//determines the employee job title, then adds to the array
+function buildCards (team) {
+    //empty array for created employees
+    let array = [];
+    for (const employee of team) {
+        if (employee instanceof Manager) {
+            array += `
+            <div class="card">
+                <h2>${employee.name}</h2>
+                <h3>Manager</h3>
+                <h4>ID: ${employee.id} Office Number: ${employee.officeNumber}</h4>
+                <a href="mailto:${employee.email}">Email Me</a>
+            </div>
+            `
+        }
+        else if (employee instanceof Engineer) {
+            array += `
+            <div class="card">
+                <h2>${employee.name}</h2>
+                <h3>Engineer</h3>
+                <h4>ID: ${employee.id}</h4>
+                <a href="https://github.com/${employee.github}">GitHub</a>
+                <a href="mailto:${employee.email}">Email Me</a>
+            </div>
+            `
+        }
+        else if (employee instanceof Intern) {
+            array += `
+            <div class="card">
+                <h2>${employee.name}</h2>
+                <h3>Intern</h3>
+                <h4>ID: ${employee.id} School: ${employee.school}</h4>
+                <a href="mailto:${employee.email}">Email Me</a>
+            </div>
+            `
+        }
+    }
+    return array
+};
 
 module.exports = {
-    buildHTML: buildHTML
+    buildHTML: buildHTML,
+    buildCards: buildCards
 }
