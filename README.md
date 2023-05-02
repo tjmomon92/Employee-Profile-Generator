@@ -21,7 +21,7 @@ Users will clone the public repo to run this program, run an 'npm i' command to 
 This application utilizes node.js and inquirer to send prompts to the user about employee information, then utilizing the answers to generate a functional HTML file.
   
 ## Testing
-Users can use command 'npm run test' to call and execute the test suite. For more information, check out this video.
+Users can use command 'npm run test' to call and execute the test suite. For more information, check out [this video](https://drive.google.com/file/d/1B4wg5-3Wzv88LIwwoz1VNwlMshbxdnMn/view).
   
 ## Licensing
 Licensed under [MIT](https://opensource.org/license/mit/)
