@@ -15,7 +15,7 @@
 A simple application to generate html based on user-entered employee information.
 
 ## Installation
-User will need to run an 'npm i' command to install all dependencies, then run command 'node index.js' to start the program. See package.json file for details.
+Users will clone the public repo to run this program, run an 'npm i' command to install all dependencies, then run command 'node index.js' to start the program. See package.json file for details.
   
 ## Usage
 This application utilizes node.js and inquirer to send prompts to the user about employee information, then utilizing the answers to generate a functional HTML file.
