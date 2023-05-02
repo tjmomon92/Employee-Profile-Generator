@@ -1,5 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+const build = require('./HTML-Build/html-build');
 const Manager = require('./Employee-Build/Manager-Build');
 const Engineer = require('./Employee-Build/Engineer-Build');
 const Intern = require('./Employee-Build/Intern-Build');
@@ -52,9 +53,9 @@ function employeeRole() {
         if (response.employeeType === 'Engineer') {
             addEngineer();
         }
-        // if (response.employeeType === 'Intern') {
-        //     addIntern();
-        // }
+        if (response.employeeType === 'Intern') {
+            addIntern();
+        }
     })
 };
 
@@ -89,7 +90,31 @@ function addEngineer() {
 
 //adds an intern via prompt, then adds to the array
 function addIntern () {
-
+    inquirer.prompt([
+        {
+            name: 'name',
+            type: 'input',
+            message: 'Intern name?'
+        },
+        {
+            name: 'id',
+            type: 'input',
+            message: 'Intern employee ID?'
+        },
+        {
+            name: 'email',
+            type: 'input',
+            message: 'Intern Email?'
+        },
+        {
+            name: 'school',
+            type: 'input',
+            message: 'Interns school?'
+        }
+    ]).then ((intern) => {
+        teamList.push(new Intern(intern.name, intern.id, intern.email, intern.school))
+        moreEmployees();
+    })
 }
 
 //asks user if more employees are needed; if yes, calls add employees function, if no, writes the HTML
@@ -115,3 +140,5 @@ function moreEmployees() {
         }
     })
 };
+
+addManager();
